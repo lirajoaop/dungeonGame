@@ -19,18 +19,21 @@ public class JogoController {
         view.exibirMensagem("Bem-vindo ao jogo!");
         view.exibirMensagem("Você vê a chave que precisa para abrir a próxima porta.");
         view.exibirMensagem("Mas ela está guardada por um monstro!");
+
+        Item itemAtual = gerenciador.getItemAtual();
         
-        while (jogador.getVida() > 0 && !endGame) {
-            Item itemAtual = gerenciador.getItemAtual();
-            
-            if (itemAtual instanceof Chave) {
+        if (itemAtual instanceof Chave) {
+            if (!jogador.temChave()) {
                 jogador.equip((Chave) itemAtual);
                 view.exibirMensagem("Você pegou a chave!");
-            } else if (itemAtual == null) {
-                view.exibirMensagem("Não há item para pegar.");
+                gerenciador.removerItemAtual();
             } else {
-                view.exibirMensagem("Esse item não é uma chave.");
+                view.exibirMensagem("Você já tem a chave.");
             }
+        } else if (itemAtual == null) {
+            view.exibirMensagem("Não há item para pegar.");
+        } else {
+            view.exibirMensagem("Esse item não é uma chave.");
         }
     }
 }

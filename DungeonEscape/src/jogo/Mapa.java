@@ -21,4 +21,8 @@ public class Mapa {
 	public Item getItem() {
 		return item;
 	}
+	
+	public void removerItem() {
+        this.item = null;
+    }
 }

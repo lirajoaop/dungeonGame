@@ -56,6 +56,10 @@ class Jogador extends Criatura {
     	this.chave = chave;
     }
 
+    //Verificar se o jogador já tem uma chave
+    public boolean temChave() {
+        return this.chave != null;
+    }
 }
 
 class Monstro extends Criatura {

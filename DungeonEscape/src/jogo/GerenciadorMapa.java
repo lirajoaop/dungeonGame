@@ -39,4 +39,10 @@ public class GerenciadorMapa {
  public Item getItemAtual() {
 	 return mapas.get(mapaAtual).getItem(); //fazer um desse pra cada tipo de item não da
  }
+
+ public void removerItemAtual() {
+    if (mapas.containsKey(mapaAtual)) {
+        mapas.get(mapaAtual).removerItem();
+    }
+}
 }
