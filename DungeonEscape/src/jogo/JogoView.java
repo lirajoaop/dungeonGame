@@ -12,8 +12,5 @@ public class JogoView {
 // }
  
  
- Mapa mapa1 = new Mapa(
-		 new Monstro("zumbi", 1, 1, 1),
-		 new Chave("carvão")
-		 );
+
 }
